@@ -10,6 +10,7 @@ import ProjectProtectedBranches from './ProjectProtectedBranches';
 import ProjectDeployKeys from './ProjectDeployKeys';
 import ProjectMergeRequests from './ProjectMergeRequests';
 import ProjectServices from './ProjectServices';
+import ProjectVariables from './ProjectVariables';
 import ProjectTriggers from './ProjectTriggers';
 import ProjectRunners from './ProjectRunners';
 import ProjectPipelines from './ProjectPipelines';
@@ -34,6 +35,7 @@ class Projects extends BaseModel {
     this.deployKeys = new ProjectDeployKeys(...args);
     this.mergeRequests = new ProjectMergeRequests(...args);
     this.services = new ProjectServices(...args);
+    this.variables = new ProjectVariables(...args);
     this.triggers = new ProjectTriggers(...args);
     this.pipelines = new ProjectPipelines(...args);
     this.jobs = new ProjectJobs(...args);
