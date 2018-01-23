@@ -18,6 +18,23 @@ class Environments extends _BaseModel2.default {
 
     return this.get(`projects/${pId}/environments`, options);
   }
+  edit(projectId, environmentId, options = {}) {
+    const [pId, eId] = [projectId, environmentId].map(_Utils.parse);
+
+    return this.put(`projects/${pId}/environments/${eId}`, options);
+  }
+
+  remove(projectId, environmentId) {
+    const [pId, eId] = [projectId, environmentId].map(_Utils.parse);
+
+    return this.delete(`projects/${pId}/environments/${eId}`);
+  }
+
+  stop(projectId, environmentId, options = {}) {
+    const [pId, eId] = [projectId, environmentId].map(_Utils.parse);
+
+    return this.post(`projects/${pId}/environments/${eId}/stop`, options);
+  }
 }
 
 exports.default = Environments;
